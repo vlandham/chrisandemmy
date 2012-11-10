@@ -17,18 +17,59 @@ fancyBorder = () ->
    .style("stroke-dasharray", "1,12")
 
 bunting = () ->
+ width = 940
+ height = 160
+ bunt = null
+ force = null
+
+ gravity = (alpha) ->
+   cx = width / 2
+   cy = height - 20 
+
+   (d) ->
+     #d.x += (cx - d.x) * alpha
+     d.y += (cy - d.y) * alpha
+
+ tick = (e) ->
+   dampenedAlpha = e.alpha * 0.1
+   bunts.selectAll(".bunt").each(gravity(dampenedAlpha))
+     .attr("transform", (d) -> "translate(#{d.x},#{d.y})")
+
+ force = d3.layout.force()
+   .gravity(0)
+   .linkDistance(0)
+   .linkStrength(1.0)
+   .charge(0)
+   .size([width, height])
+   .on("tick", tick)
+
  bunts = d3.selectAll(".bunting").append("svg")
-   .attr("width", 940)
-   .attr("height", 60)
+   .attr("width", width)
+   .attr("height", height)
 
  data = []
  [0..22].forEach (i) ->
-    data.push(i)
+    data.push({num:i, x:10+40*i,y:0})
 
+ edges = []
+ [0..21].forEach (i) ->
+   edges.push({source:i, target:i+1})
+
+ data[0].fixed = true
+ data[0].y = -25 
+ data[22].fixed = true
+ data[22].y = -25 
+ data[11].fixed = true
+ data[11].y = -25 
+
+ force.nodes(data).links(edges).start()
  
- bunt = bunts.selectAll(".bunt").data(data).enter()
+ bunt = bunts.selectAll(".bunt").data(data)
+ bunt.enter()
    .append("g")
+   .attr("class", "bunt")
    .attr("transform", (d,i) -> "translate(#{10 + 40 * i},#{20})")
+   .call(force.drag)
 
  bunt.append("path")
    .attr('d', (d) -> 'M 0 0 l 20 0 l -10 25 z')
