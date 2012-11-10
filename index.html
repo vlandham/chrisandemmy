@@ -1,74 +1,113 @@
-<!DOCTYPE html>
-<html>
+<!doctype html>
+<!--[if lt IE 7]> <html class="no-js ie6 oldie" lang="en"> <![endif]-->
+<!--[if IE 7]>    <html class="no-js ie7 oldie" lang="en"> <![endif]-->
+<!--[if IE 8]>    <html class="no-js ie8 oldie" lang="en"> <![endif]-->
+<!--[if gt IE 8]><!--> <html class="no-js" lang="en"> <!--<![endif]-->
+<head>
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
 
-  <head>
-    <meta charset='utf-8' />
-    <meta http-equiv="X-UA-Compatible" content="chrome=1" />
-    <meta name="description" content="Chrisandemmy : chrisandemmy.com" />
+  <title>vis</title>
+  <meta name="description" content="">
+  <meta name="author" content="">
 
-    <link rel="stylesheet" type="text/css" media="screen" href="stylesheets/stylesheet.css">
+  <meta name="viewport" content="width=device-width,initial-scale=1">
 
-    <title>Chrisandemmy</title>
-  </head>
+  <script src="http://cdn.leafletjs.com/leaflet-0.4.5/leaflet.js"></script>
+  <link rel="stylesheet" href="http://cdn.leafletjs.com/leaflet-0.4.5/leaflet.css" />
+  <!--[if lte IE 8]>
+    <link rel="stylesheet" href="http://cdn.leafletjs.com/leaflet-0.4.5/leaflet.ie.css" />
+  <![endif]-->
 
-  <body>
 
-    <!-- HEADER -->
-    <div id="header_wrap" class="outer">
-        <header class="inner">
-          <a id="forkme_banner" href="https://github.com/vlandham/chrisandemmy">View on GitHub</a>
+  <!-- CSS concatenated and minified via ant build script-->
+  <link href='http://fonts.googleapis.com/css?family=Petit+Formal+Script|Lobster|Sanchez' rel='stylesheet' type='text/css'>
 
-          <h1 id="project_title">Chrisandemmy</h1>
-          <h2 id="project_tagline">chrisandemmy.com</h2>
 
-            <section id="downloads">
-              <a class="zip_download_link" href="https://github.com/vlandham/chrisandemmy/zipball/master">Download this project as a .zip file</a>
-              <a class="tar_download_link" href="https://github.com/vlandham/chrisandemmy/tarball/master">Download this project as a tar.gz file</a>
-            </section>
-        </header>
+  <link rel="stylesheet" href="css/bootstrap.min.css">
+  <link rel="stylesheet" href="css/style.css">
+  <!-- end CSS-->
+
+  <script type="text/javascript" src="http://maps.stamen.com/js/tile.stamen.js?v1.2.0"></script>
+
+
+  <script src="js/libs/modernizr-2.0.6.min.js"></script>
+</head>
+
+<body>
+
+  <div id="container" class="container">
+    <header>
+	<h1>CHRIS <span class="accent">&amp;</span> EMMY</h1>
+	<div class="border"></div>
+    </header>
+    <div id="main" role="main">
+	<div class="row">
+		<div class="span12">
+			<div class="fancy-header" data-header="The Event"></div>
+			<p>Get ready for </p>
+		</div>
+	</div>
+	<div class="border"></div>
+	<div class="row">
+		<div class="span12">
+			<div class="fancy-header" data-header="The Venue"></div>
+			<h3 class="bold">The Overbrook House</h3>
+			<div id="image-border">
+				<img id="overbrook-image" src="./img/overbrook4.jpg"/>
+			</div>
+			<p>The Overbrook House is at the end of a very quiet street, and care has been taken over the years to plant flowering bushes and trees along it for the benefit of those taking walks.</p>
+			<h3 class="bold">Location</h3>
+			<div id="map-border">
+				<div id="map"></div>
+			</div>
+		</div>
+	</div>
+	<div class="border"></div>
+	<div class="row">
+		<div class="span8 right-border">
+			<h2 class="fancy">Header</h2>
+			<p>This is </p>
+		</div>
+		<div class="span4">
+			<h2 class="fancy">Header</h2>
+			<p> Where</p>
+		</div>
+	</div>
     </div>
+    <footer>
 
-    <!-- MAIN CONTENT -->
-    <div id="main_content_wrap" class="outer">
-      <section id="main_content" class="inner">
-        <h3>Welcome to GitHub Pages.</h3>
+    </footer>
+  </div> <!--! end of #container -->
 
-<p>This automatic page generator is the easiest way to create beautiful pages for all of your projects. Author your page content here using GitHub Flavored Markdown, select a template crafted by a designer, and publish. After your page is generated, you can check out the new branch:</p>
 
-<pre><code>$ cd your_repo_root/repo_name
-$ git fetch origin
-$ git checkout gh-pages
-</code></pre>
+  <!-- <script src="//ajax.googleapis.com/ajax/libs/jquery/1.7.2/jquery.min.js"></script> -->
+  <script>window.jQuery || document.write('<script src="js/libs/jquery-1.7.2.min.js"><\/script>')</script>
 
-<p>If you're using the GitHub for Mac, simply sync your repository and you'll see the new branch.</p>
 
-<h3>Designer Templates</h3>
+  <script defer src="js/plugins.js"></script>
+  <script defer src="js/script.js"></script>
+  <script src="js/libs/coffee-script.js"></script>
+  <script src="js/libs/d3.v2.js"></script>
+  <script type="text/coffeescript" src="coffee/vis.coffee"></script>
+  <script type="text/javascript">
+    $(document).ready(function() {
+    });
+  </script>
 
-<p>We've crafted some handsome templates for you to use. Go ahead and continue to layouts to browse through them. You can easily go back to edit your page before publishing. After publishing your page, you can revisit the page generator and switch to another theme. Your Page content will be preserved if it remained markdown format.</p>
 
-<h3>Rather Drive Stick?</h3>
+  <script> // Change UA-XXXXX-X to be your site's ID
+    window._gaq = [['_setAccount','UAXXXXXXXX1'],['_trackPageview'],['_trackPageLoadTime']];
+    Modernizr.load({
+      load: ('https:' == location.protocol ? '//ssl' : '//www') + '.google-analytics.com/ga.js'
+    });
+  </script>
 
-<p>If you prefer to not use the automatic generator, push a branch named <code>gh-pages</code> to your repository to create a page manually. In addition to supporting regular HTML content, GitHub Pages support Jekyll, a simple, blog aware static site generator written by our own Tom Preston-Werner. Jekyll makes it easy to create site-wide headers and footers without having to copy them across every page. It also offers intelligent blog support and other advanced templating features.</p>
 
-<h3>Authors and Contributors</h3>
-
-<p>You can <a href="https://github.com/blog/821" class="user-mention">@mention</a> a GitHub username to generate a link to their profile. The resulting <code>&lt;a&gt;</code> element will link to the contributor's GitHub Profile. For example: In 2007, Chris Wanstrath (<a href="https://github.com/defunkt" class="user-mention">@defunkt</a>), PJ Hyett (<a href="https://github.com/pjhyett" class="user-mention">@pjhyett</a>), and Tom Preston-Werner (<a href="https://github.com/mojombo" class="user-mention">@mojombo</a>) founded GitHub.</p>
-
-<h3>Support or Contact</h3>
-
-<p>Having trouble with Pages? Check out the documentation at <a href="http://help.github.com/pages">http://help.github.com/pages</a> or contact <a href="mailto:support@github.com">support@github.com</a> and we’ll help you sort it out.</p>
-      </section>
-    </div>
-
-    <!-- FOOTER  -->
-    <div id="footer_wrap" class="outer">
-      <footer class="inner">
-        <p class="copyright">Chrisandemmy maintained by <a href="https://github.com/vlandham">vlandham</a></p>
-        <p>Published with <a href="http://pages.github.com">GitHub Pages</a></p>
-      </footer>
-    </div>
-
-    
-
-  </body>
+  <!--[if lt IE 7 ]>
+    <script src="//ajax.googleapis.com/ajax/libs/chrome-frame/1.0.3/CFInstall.min.js"></script>
+    <script>window.attachEvent('onload',function(){CFInstall.check({mode:'overlay'})})</script>
+  <![endif]-->
+  
+</body>
 </html>
