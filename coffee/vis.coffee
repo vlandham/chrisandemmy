@@ -22,6 +22,9 @@ bunting = () ->
  bunt = null
  force = null
 
+ randomFromInterval = (from,to) ->
+   Math.floor(Math.random()*(to-from+1)+from)
+
  gravity = (alpha) ->
    cx = width / 2
    cy = height - 20 
@@ -29,6 +32,9 @@ bunting = () ->
    (d) ->
      #d.x += (cx - d.x) * alpha
      d.y += (cy - d.y) * alpha
+
+ wind = (alpha) ->
+   cx = width
 
  tick = (e) ->
    dampenedAlpha = e.alpha * 0.1
@@ -48,19 +54,30 @@ bunting = () ->
    .attr("height", height)
 
  data = []
- [0..22].forEach (i) ->
-    data.push({num:i, x:10+40*i,y:0})
-
  edges = []
- [0..21].forEach (i) ->
-   edges.push({source:i, target:i+1})
+ num = 23
+ [0..1].forEach (d) ->
+   [1..num].forEach (i) ->
+     start = if d == 0 then -80 else 80
+     data.push({num:i, x:(start)+40*i,y:0, d:d})
 
+   [0..num - 2].forEach (i) ->
+     edges.push({source:(num * d) + i, target:(num * d) + i+1})
+
+ offset = -40 
  data[0].fixed = true
- data[0].y = -25 
+ data[0].y = offset
  data[22].fixed = true
- data[22].y = -25 
+ data[22].y = offset
+ data[23].fixed = true
+ data[23].y = offset
+ data[data.length - 1].fixed = true
+ data[data.length - 1].y = offset
+
  data[11].fixed = true
- data[11].y = -25 
+ data[11].y = offset
+ data[32].fixed = true
+ data[32].y = offset
 
  force.nodes(data).links(edges).start()
  
@@ -73,7 +90,7 @@ bunting = () ->
 
  bunt.append("path")
    .attr('d', (d) -> 'M 0 0 l 20 0 l -10 25 z')
-   .attr("fill", "#FFD340")
+   .attr("fill", (d) -> if d.d == 0 then "#FFD340" else "#FFEA7B")
 
  #bunt.append("circle").attr("fill", "#FFD340").attr('r', 4)
 
@@ -82,7 +99,6 @@ bunting = () ->
 fancyHeader = () ->
  header = d3.selectAll(".fancy-header")
    .datum((d) -> d3.select(this).attr("data-header"))
-   .call((d) -> console.log(this))
    .append("svg")
    .attr("width", 940)
    .attr("height", 40)
