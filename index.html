@@ -36,20 +36,50 @@
 
 <body>
 
+  <div class="headStripBack"></div>
+  <div class="headStrip">
+    <ul class="naver">
+      <li>
+        <a class="n0" id="event" href="#">Event</a>
+        <span>/</span>
+      </li>
+      <li>
+        <a class="n2" id="venue" href="#">Venue</a>
+        <span>/</span>
+      </li>
+      <li>
+        <a class="n3" id="bride_groom" href="#">Bride &amp; Groom</a>
+        <span>/</span>
+      </li>
+      <li>
+        <a class="n3" id="party" href="#">Wedding Party</a>
+        <span>/</span>
+      </li>
+      <li>
+        <a class="n3" id="agenda" href="agenda.html">Agenda</a>
+        <span>/</span>
+      </li>
+      <li>
+        <a class="n5" id="activities" href="activities.html">Activities</a>
+      </li>
+    </ul>
+  </div>
+
   <div id="container" class="container">
+
     <div class="bunting"></div>
     <header>
       <h1>CHRIS <span class="accent">&amp;</span> EMMY</h1>
       <div class="border"></div>
     </header>
     <div id="main" role="main">
-      <div class="row">
+      <div class="row" id="event_section">
         <div class="span12">
           <div class="fancy-header" data-header="The Event"></div>
           <p>Get ready for </p>
         </div>
       </div>
-      <div class="row">
+      <div class="row" id="venue_section">
         <div class="span12">
           <div class="fancy-header" data-header="The Venue"></div>
           <h3 class="bold">Overbrook House</h3>
@@ -73,7 +103,7 @@
     </div>
 
     <div class="border"></div>
-    <div class="row">
+    <div class="row" id="bride_groom_section">
       <div class="span12">
         <div class="fancy-header" data-header="The Bride &amp; Groom"></div>
         <h3 class="left">Chris</h3>
@@ -84,7 +114,7 @@
     </div>
 
     <div class="border"></div>
-    <div class="row">
+    <div class="row" id="party_section">
       <div class="span12">
         <div class="fancy-header" data-header="The Wedding Party"></div>
         <h3>Rachael</h3>

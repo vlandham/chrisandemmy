@@ -6,6 +6,61 @@ body {
 	font-family: 'Sanchez', serif;
 }
 
+.headStrip {
+  width: 100%;
+  height: 33px;
+  color: #898585;
+  position: fixed;
+  top: 0;
+  z-index: 900;
+  min-width: 1000px;
+}
+
+.headStripBack{
+  width: 100%;
+  height: 33px;
+  background: #000;
+  -moz-opacity:.80; filter:alpha(opacity=80); opacity:.80;
+  position: fixed;
+  top: 0;
+  z-index: 850;
+}
+
+.naver {
+  list-style: none;
+  padding: 0 0 0 10px;
+  font-size: 0.7em;
+  text-transform: uppercase;
+  font-weight: bold;
+  min-width: 1000px;
+  width: 990px;
+  margin: 0 auto;
+  display:list-item;
+}
+
+.lt-ie9 .naver{
+  font-size:0.8em;
+}
+
+li{
+  list-style: none;
+}
+.naver li {
+  float: left;
+  margin: 0.5em 0.7em 0em 0em;
+}
+.naver li span{
+  margin: 0 0 0 0.5em;
+}
+.naver li a:link, .naver li a:visited{
+  color: #fff;
+  text-decoration: none;
+}
+
+.naver li a:hover {
+  color: #FFEA7B;
+}
+
 header h1 {
 	font-size: 64px;
 	padding-bottom: 10px;

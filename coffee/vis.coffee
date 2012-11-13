@@ -159,4 +159,11 @@ $ ->
  fancyHeader()
  bunting()
  setupMap()
+
+ $(".naver li a").click () ->
+   id = $(this).attr('id') + "_section"
+   $('html, body').animate({
+     scrollTop: $("##{id}").offset().top - 40
+   }, 500)
+   false
  
