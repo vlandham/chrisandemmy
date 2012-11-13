@@ -44,6 +44,10 @@ h2,h3,h4 {
 	box-sizing: border-box;
 }
 
+.left {
+  text-align: left;
+}
+
 #map { 
 	height: 300px;
 	width: 920px;

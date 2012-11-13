@@ -121,9 +121,13 @@ fancyHeader = () ->
 
  header.append("rect")
    .style("fill", "white")
-   .attr("x", (930 / 2) - 100)
+   .attr "x", (d) ->
+     textLength = d.length
+     (930 / 2) - (10 * (textLength + 1))
    .attr("y", 0)
-   .attr("width", 200)
+   .attr "width", (d) ->
+     textLength = d.length
+     (20 * (textLength + 1))
    .attr("height", 40)
 
  header.append('text')
