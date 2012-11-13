@@ -31,7 +31,20 @@
   <script type="text/javascript" src="http://maps.stamen.com/js/tile.stamen.js?v1.2.0"></script>
 
 
+
   <script src="js/libs/modernizr-2.0.6.min.js"></script>
+  <script type="text/javascript" src="js/countdown.js"></script>
+  <script language="javascript" type="text/javascript"> 
+    today = new Date(); 
+    todayEpoch = today.getTime(); 
+    target = new Date("1 June, 2013"); 
+    targetEpoch = target.getTime(); 
+    daysLeft = Math.floor(((targetEpoch - todayEpoch) / (60*60*24)) / 1000);
+    weeksLeft = Math.floor(((targetEpoch - todayEpoch) / (60*60*168)) / 1000); 
+    monthsLeft = Math.floor(((targetEpoch - todayEpoch) / (60*60*720)) / 1000); 
+
+
+</script>
 </head>
 
 <body>
@@ -76,7 +89,16 @@
       <div class="row" id="event_section">
         <div class="span12">
           <div class="fancy-header" data-header="The Event"></div>
-          <p>Get ready for </p>
+          <div class="row">
+            <div class="span5 offset7">
+              <div id="countdown-wrapper">
+                <h2>Begins In</h2>
+                <div id="countdown"></div>
+                <h3>June 1st, 2013</h3>
+              </div>
+            </div>
+          </div>
+          
         </div>
       </div>
       <div class="row" id="venue_section">
@@ -100,27 +122,27 @@
           <p> Where</p>
         </div>
       </div>
-    </div>
 
-    <div class="border"></div>
-    <div class="row" id="bride_groom_section">
-      <div class="span12">
-        <div class="fancy-header" data-header="The Bride &amp; Groom"></div>
-        <h3 class="left">Chris</h3>
-        <p>Chris grew up among the gents and tarts of ye Ole' Britain. </p>
-        <h3 class="left">Emmy</h3>
-        <p>Emmy was raised on salt, tack, and the wondrous beauty of the Great American Desert. </p>
+      <div class="border"></div>
+      <div class="row" id="bride_groom_section">
+        <div class="span12">
+          <div class="fancy-header" data-header="The Bride &amp; Groom"></div>
+          <h3 class="left">Chris</h3>
+          <p>Chris grew up among the gents and tarts of ye Ole' Britain. </p>
+          <h3 class="left">Emmy</h3>
+          <p>Emmy was raised on salt, tack, and the wondrous beauty of the Great American Desert. </p>
+        </div>
       </div>
-    </div>
 
-    <div class="border"></div>
-    <div class="row" id="party_section">
-      <div class="span12">
-        <div class="fancy-header" data-header="The Wedding Party"></div>
-        <h3>Rachael</h3>
-        <p></p>
-        <h3>Martha</h3>
-        <p></p>
+      <div class="border"></div>
+      <div class="row" id="party_section">
+        <div class="span12">
+          <div class="fancy-header" data-header="The Wedding Party"></div>
+          <h3>Rachael</h3>
+          <p></p>
+          <h3>Martha</h3>
+          <p></p>
+        </div>
       </div>
     </div>
     <footer>
@@ -140,7 +162,20 @@
     <script type="text/coffeescript" src="coffee/vis.coffee"></script>
     <script type="text/javascript">
       $(document).ready(function() {
+          console.log(monthsLeft);
+          console.log(weeksLeft);
+          console.log(daysLeft);
+          var cd = new countdown("countdown", {
+            year: 0,
+            day: daysLeft, //days left
+            hour:0,
+            min:0,
+            sec:0,
+            hide_zeros: false,
+            format: "[{m} Months] [{w} Weeks] [{d} Days]",
+            onstep: function(sec){ return true;}
           });
+      });
 </script>
 
 

@@ -131,3 +131,40 @@ h2,h3,h4 {
 	width: 818px;
 	padding-bottom: 20px;
 }
+
+#countdown-wrapper {
+  width: 400px;
+}
+
+#countdown {
+  background-image: url("/img/clock.png");
+  background-repeat: no-repeat;
+  height:200px;
+}
+
+#countdown_m_hide {
+  margin-left: 100px;
+  padding-top: 30px;
+  font-size: 60px;
+  display:block;
+  clear:right;
+  padding-bottom: 28px;
+}
+
+#countdown_w_hide {
+  margin-left: 100px;
+  font-size: 60px;
+  display:block;
+  padding-bottom: 28px;
+  /* padding-left: 4px; */
+  clear:right;
+}
+
+#countdown_d_hide {
+  margin-left: 100px;
+  font-size: 60px;
+  display:block;
+  padding-bottom: 28px;
+  /* padding-left: 4px; */
+  clear:right;
+}

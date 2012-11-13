@@ -153,6 +153,8 @@ setupMap = () ->
  marker.bindPopup('<b>Overbrook House</b><br/>Bourne, MA')
  map.scrollWheelZoom.disable()
 
+
+
 $ ->
 
  fancyBorder()
