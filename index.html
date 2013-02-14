@@ -1,208 +1,26 @@
-<!doctype html>
-<!--[if lt IE 7]> <html class="no-js ie6 oldie" lang="en"> <![endif]-->
-<!--[if IE 7]>    <html class="no-js ie7 oldie" lang="en"> <![endif]-->
-<!--[if IE 8]>    <html class="no-js ie8 oldie" lang="en"> <![endif]-->
-<!--[if gt IE 8]><!--> <html class="no-js" lang="en"> <!--<![endif]-->
-<head>
-  <meta charset="utf-8">
-  <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+---
+layout: default
+title: Home
+---
 
-  <title>Chris &amp; Emmy</title>
-  <meta name="description" content="The wedding site for Chris Jedras and Emmy Vallandingham">
-  <meta name="author" content="">
+<div class="row">
+  <p>Hey everyone. Thank you for taking the time to check out our website!</p>
+  <br/>
+  <p>We cannot wait to see you all at our wedding.</p>
+  <br/><br/>
+</div>
 
-  <meta name="viewport" content="width=device-width,initial-scale=1">
-
-  <script src="http://cdn.leafletjs.com/leaflet-0.4.5/leaflet.js"></script>
-  <link rel="stylesheet" href="http://cdn.leafletjs.com/leaflet-0.4.5/leaflet.css" />
-  <!--[if lte IE 8]>
-    <link rel="stylesheet" href="http://cdn.leafletjs.com/leaflet-0.4.5/leaflet.ie.css" />
-  <![endif]-->
-
-
-  <!-- CSS concatenated and minified via ant build script-->
-  <link href='http://fonts.googleapis.com/css?family=Petit+Formal+Script|Lobster|Sanchez' rel='stylesheet' type='text/css'>
-
-
-  <link rel="stylesheet" href="css/bootstrap.min.css">
-  <link rel="stylesheet" href="css/style.css">
-  <!-- end CSS-->
-
-  <script type="text/javascript" src="http://maps.stamen.com/js/tile.stamen.js?v1.2.0"></script>
-
-
-
-  <script src="js/libs/modernizr-2.0.6.min.js"></script>
-  <script type="text/javascript" src="js/countdown.js"></script>
-  <script language="javascript" type="text/javascript"> 
-    today = new Date(); 
-    todayEpoch = today.getTime(); 
-    target = new Date("1 June, 2013"); 
-    targetEpoch = target.getTime(); 
-    daysLeft = Math.floor(((targetEpoch - todayEpoch) / (60*60*24)) / 1000);
-    weeksLeft = Math.floor(((targetEpoch - todayEpoch) / (60*60*168)) / 1000); 
-    monthsLeft = Math.floor(((targetEpoch - todayEpoch) / (60*60*720)) / 1000); 
-
-
-</script>
-</head>
-
-<body>
-
-  <div class="headStripBack"></div>
-  <div class="headStrip">
-    <ul class="naver">
-      <li>
-        <a class="n0" id="event" href="#">Event</a>
-        <span>/</span>
-      </li>
-      <li>
-        <a class="n2" id="venue" href="#">Venue</a>
-        <span>/</span>
-      </li>
-      <li>
-        <a class="n3" id="bride_groom" href="#">Bride &amp; Groom</a>
-        <span>/</span>
-      </li>
-      <li>
-        <a class="n3" id="party" href="#">Wedding Party</a>
-        <span>/</span>
-      </li>
-      <li>
-        <a class="n3" id="agenda" href="agenda.html">Agenda</a>
-        <span>/</span>
-      </li>
-      <li>
-        <a class="n5" id="activities" href="activities.html">Activities</a>
-      </li>
-    </ul>
+<div id="button_row" class="row">
+  <div class="span3">
+    <a href="#" class="ebtn pink">RSVP Online<br/><span id="rsvp_easy">(how easy is that)</span></a>
   </div>
-
-  <div id="container" class="container">
-
-    <div class="bunting"></div>
-    <header>
-      <h1>CHRIS <span class="accent">&amp;</span> EMMY</h1>
-      <div class="border"></div>
-    </header>
-    <div id="main" role="main">
-      <div class="row" id="event_section">
-        <div class="span12">
-          <div class="fancy-header" data-header="The Event"></div>
-          <div class="row">
-            <div class="span6">
-              <h3>Get Ready</h3>
-              <p>Get ready for the ride of Chris, Emmy, and your life.</p>
-              <p>We are happy to announce the event of the decade!</p>
-            </div>
-            <div class="span5 offset1">
-              <div id="countdown-wrapper">
-                <h3>Begins In</h3>
-                <div id="countdown"></div>
-                <h3>June 1st, 2013</h3>
-              </div>
-            </div>
-          </div>
-          
-        </div>
-      </div>
-      <div class="row" id="venue_section">
-        <div class="span12">
-          <div class="fancy-header" data-header="The Venue"></div>
-          <h3 class="bold">Overbrook House</h3>
-          <div id="map-border">
-            <div id="map"></div>
-          </div>
-          <p>Overbrook House is at the end of a very quiet street, and care has been taken over the years to plant flowering bushes and trees along it for the benefit of those taking walks.</p>
-        </div>
-      </div>
-      <div class="border"></div>
-      <div class="row">
-        <div class="span8 right-border">
-          <h2 class="fancy">Header</h2>
-          <p>This is </p>
-        </div>
-        <div class="span4">
-          <h2 class="fancy">Header</h2>
-          <p> Where</p>
-        </div>
-      </div>
-
-      <div class="border"></div>
-      <div class="row" id="bride_groom_section">
-        <div class="span12">
-          <div class="fancy-header" data-header="The Bride &amp; Groom"></div>
-          <h3 class="left">Chris</h3>
-          <p>Chris grew up among the gents and tarts of ye Ole' Britain. </p>
-          <h3 class="left">Emmy</h3>
-          <p>Emmy was raised on salt, tack, and the wondrous beauty of the Great American Desert. </p>
-        </div>
-      </div>
-
-      <div class="border"></div>
-      <div class="row" id="party_section">
-        <div class="span12">
-          <div class="fancy-header" data-header="The Wedding Party"></div>
-          <h3>Rachael</h3>
-          <p></p>
-          <h3>Martha</h3>
-          <p></p>
-        </div>
-      </div>
-    </div>
-    <footer>
-
-    </footer>
-  </div> <!--! end of #container -->
+  <div class="span3">
+    <a href="#" class="ebtn">Check out the schedule of events</a>
+  </div>
+  <div class="span3">
+    <a href="#" class="ebtn pink">See where everyone is coming from</a>
+  </div>
+</div>
 
 
-  <!-- <script src="//ajax.googleapis.com/ajax/libs/jquery/1.7.2/jquery.min.js"></script> -->
-  <script>window.jQuery || document.write('<script src="js/libs/jquery-1.7.2.min.js"><\/script>')</script>
 
-
-    <script defer src="js/plugins.js"></script>
-    <script defer src="js/script.js"></script>
-    <script src="js/libs/coffee-script.js"></script>
-    <script src="js/libs/d3.v2.js"></script>
-    <script type="text/coffeescript" src="coffee/vis.coffee"></script>
-    <script type="text/javascript">
-      $(document).ready(function() {
-          console.log(monthsLeft);
-          console.log(weeksLeft);
-          console.log(daysLeft);
-          var cd = new countdown("countdown", {
-            year: 0,
-            day: daysLeft, //days left
-            hour:0,
-            min:0,
-            sec:0,
-            hide_zeros: false,
-            format: "[{m} Months] [{w} Weeks] [{d} Days]",
-            onstep: function(sec){ return true;}
-          });
-      });
-</script>
-
-
-<script type="text/javascript">
-
-  var _gaq = _gaq || [];
-  _gaq.push(['_setAccount', 'UA-26518241-2']);
-  _gaq.push(['_trackPageview']);
-
-  (function() {
-    var ga = document.createElement('script'); ga.type = 'text/javascript'; ga.async = true;
-    ga.src = ('https:' == document.location.protocol ? 'https://ssl' : 'http://www') + '.google-analytics.com/ga.js';
-    var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(ga, s);
-  })();
-
-</script>
-
-
-<!--[if lt IE 7 ]>
-<script src="//ajax.googleapis.com/ajax/libs/chrome-frame/1.0.3/CFInstall.min.js"></script>
-<script>window.attachEvent('onload',function(){CFInstall.check({mode:'overlay'})})</script>
-<![endif]-->
-
-</body>
-</html>
