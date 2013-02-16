@@ -132,7 +132,7 @@ h1,h2,h3 {
 #nav {
 	width: 100%;
 	float: left;
-	margin: 0 0 0 60px;
+	margin: 0 0 0 110px;
 	padding: 0 0 0 0;
 
 	list-style: none;
@@ -196,6 +196,8 @@ h1,h2,h3 {
 
 .ebtn:hover {
   text-decoration: none;
+  background-color:white;
+  color:#D1536A;
 }
 
 #rsvp_easy {
@@ -205,6 +207,12 @@ h1,h2,h3 {
 .pink {
   background-color:#D1536A;
   color:white;
+}
+
+.pink:hover {
+  text-decoration: none;
+  background-color:white;
+  color:#D1536A;
 }
 
 
