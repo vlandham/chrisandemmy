@@ -118,6 +118,16 @@ h1,h2,h3 {
   margin-left:auto;
 }
 
+#logo a {
+  display: block;
+  text-align: center;
+}
+
+#logo a img {
+  margin:auto;
+  text-align: center;
+}
+
 #titles h2 {
   font-size: 2.2em;
 }
@@ -154,6 +164,11 @@ h1,h2,h3 {
 }
 
 #nav li a:hover {
+	color: #D1536A;
+	background-color: #fff;
+}
+
+#nav li.current a {
 	color: #D1536A;
 	background-color: #fff;
 }
