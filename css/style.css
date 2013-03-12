@@ -11,6 +11,11 @@ h1,h2,h3 {
   color: #444;
 }
 
+.center {
+  text-align: center;
+  margin:auto;
+ } 
+
 #main {
   width: 840px;
 }
@@ -50,48 +55,48 @@ h1,h2,h3 {
   border-radius: 80px;
 }
 
-.heart {
-    position: relative;
-    width: 100px;
-    height: 90px;
-    top: 40px;
-    left: 30px;
-}
-.heart:before,
-.heart:after {
-    position: absolute;
-    content: "";
-    left: 50px;
-    top: 0;
-    width: 50px;
-    height: 80px;
-    background: #D1536A;
-    -moz-border-radius: 50px 50px 0 0;
-    border-radius: 50px 50px 0 0;
-    -webkit-transform: rotate(-45deg);
-       -moz-transform: rotate(-45deg);
-        -ms-transform: rotate(-45deg);
-         -o-transform: rotate(-45deg);
-            transform: rotate(-45deg);
-    -webkit-transform-origin: 0 100%;
-       -moz-transform-origin: 0 100%;
-        -ms-transform-origin: 0 100%;
-         -o-transform-origin: 0 100%;
-            transform-origin: 0 100%;
-}
-.heart:after {
-    left: 0;
-    -webkit-transform: rotate(45deg);
-       -moz-transform: rotate(45deg);
-        -ms-transform: rotate(45deg);
-         -o-transform: rotate(45deg);
-            transform: rotate(45deg);
-    -webkit-transform-origin: 100% 100%;
-       -moz-transform-origin: 100% 100%;
-        -ms-transform-origin: 100% 100%;
-         -o-transform-origin: 100% 100%;
-            transform-origin :100% 100%;
-}
+/* .heart { */
+/*     position: relative; */
+/*     width: 100px; */
+/*     height: 90px; */
+/*     top: 40px; */
+/*     left: 30px; */
+/* } */
+/* .heart:before, */
+/* .heart:after { */
+/*     position: absolute; */
+/*     content: ""; */
+/*     left: 50px; */
+/*     top: 0; */
+/*     width: 50px; */
+/*     height: 80px; */
+/*     background: #D1536A; */
+/*     -moz-border-radius: 50px 50px 0 0; */
+/*     border-radius: 50px 50px 0 0; */
+/*     -webkit-transform: rotate(-45deg); */
+/*        -moz-transform: rotate(-45deg); */
+/*         -ms-transform: rotate(-45deg); */
+/*          -o-transform: rotate(-45deg); */
+/*             transform: rotate(-45deg); */
+/*     -webkit-transform-origin: 0 100%; */
+/*        -moz-transform-origin: 0 100%; */
+/*         -ms-transform-origin: 0 100%; */
+/*          -o-transform-origin: 0 100%; */
+/*             transform-origin: 0 100%; */
+/* } */
+/* .heart:after { */
+/*     left: 0; */
+/*     -webkit-transform: rotate(45deg); */
+/*        -moz-transform: rotate(45deg); */
+/*         -ms-transform: rotate(45deg); */
+/*          -o-transform: rotate(45deg); */
+/*             transform: rotate(45deg); */
+/*     -webkit-transform-origin: 100% 100%; */
+/*        -moz-transform-origin: 100% 100%; */
+/*         -ms-transform-origin: 100% 100%; */
+/*          -o-transform-origin: 100% 100%; */
+/*             transform-origin :100% 100%; */
+/* } */
 
 
 #border {
@@ -142,7 +147,7 @@ h1,h2,h3 {
 #nav {
 	width: 100%;
 	float: left;
-	margin: 0 0 0 110px;
+	margin: 0 0 0 150px;
 	padding: 0 0 0 0;
 
 	list-style: none;
@@ -161,6 +166,10 @@ h1,h2,h3 {
 	text-decoration: none;
 	color: #888;
 	border-right: 1px solid #ccc;
+}
+
+#nav li a.last {
+  border-right: none;
 }
 
 #nav li a:hover {
