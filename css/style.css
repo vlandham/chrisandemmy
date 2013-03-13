@@ -229,7 +229,18 @@ h1,h2,h3 {
 }
 
 .pink {
-  background-color:#D1536A;
+  /* background-color:#D1536A; */
+  background-color:#E47A7D;
+  color:white;
+}
+
+.yellow {
+  background-color:#EFB435;
+  color:white;
+}
+
+.blue {
+  background-color:#BED1CE;
   color:white;
 }
 
