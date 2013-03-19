@@ -55,6 +55,14 @@ h1,h2,h3 {
   border-radius: 80px;
 }
 
+.registry_image img {
+  border: 1px solid #ddd;
+}
+
+.registry_image p {
+  padding-top: 6px;
+}
+
 /* .heart { */
 /*     position: relative; */
 /*     width: 100px; */
