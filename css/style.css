@@ -1,6 +1,7 @@
 
 body {
-  background-color:#C4DBDA;
+  /* background-color:#C4DBDA; */
+  background-color:#3FA99B;
   color: #888;
   font-family: 'Open Sans Condensed', sans-serif;
   font-size: 120%;
@@ -9,6 +10,10 @@ body {
 h1,h2,h3 {
   font-weight: normal;
   color: #444;
+}
+
+li {
+  padding-bottom: 7px;
 }
 
 .center {
@@ -108,6 +113,7 @@ h1,h2,h3 {
 
 
 #border {
+  background-color:#C4DBDA;
   margin-right: auto;
   margin-left: auto;
   width: 860px;
@@ -248,7 +254,8 @@ h1,h2,h3 {
 }
 
 .blue {
-  background-color:#BED1CE;
+  /* background-color:#BED1CE; */
+  background-color:#253E8A;
   color:white;
 }
 
