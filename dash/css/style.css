@@ -1,0 +1,16 @@
+
+.big_text h2 {
+  font-size: 15px;
+}
+
+.big_text {
+  text-align: center;
+}
+
+.big_text h3 {
+  font-size: 90px;
+  font-weight: bold;
+}
+
+#total_count {
+}
