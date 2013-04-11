@@ -1,6 +1,10 @@
 
 root = exports ? this
 
+web_data = []
+manual_data = []
+
+all_data = []
 
 # _.templateSettings.variable = "ee"
 
@@ -33,13 +37,24 @@ set_music = (people, table_id) ->
 
 
 
-display = (data, tabletop) ->
-  console.log(data)
-  _.each data, (d) ->
+display = (mdata, tabletop) ->
+  manual_data = mdata
+  _.each manual_data, (d) ->
+    d.name = d['name']
+    d.total = parseInt(d['total'])
+    d.attending = (d['attending'] == 'yes')
+    d.music = d['music']
+
+  _.each web_data, (d) ->
     d.name = d['namesofattendees']
     d.total = parseInt(d['totalnumberattending'])
     d.attending = (d['willyoubeattending'] == "Can't wait!")
     d.music = d['weretakingrequests']
+
+
+  data = web_data.concat(manual_data)
+  all_data = data
+
   people_coming = _.filter data, (d) -> d.attending == true
   people_declining = _.filter data, (d) -> d.attending == false
 
@@ -53,9 +68,16 @@ display = (data, tabletop) ->
 
 
 # https://docs.google.com/spreadsheet/pub?key=0Aphqt-W5Px29dDdxZkxJaDd0dGRGaE02YmNvTDJPYVE&single=true&gid=0&output=html
+#
+# https://docs.google.com/spreadsheet/pub?key=0Aphqt-W5Px29dDN3NUdKSS1mS0pEQ2JDSkVqN0tlZ3c&single=true&gid=0&output=html
+
+init_manual = (data, tabletop) ->
+  web_data = data
+  Tabletop.init( {key: '0Aphqt-W5Px29dDN3NUdKSS1mS0pEQ2JDSkVqN0tlZ3c', callback: display, simpleSheet: true})
+
 
 init = () ->
-  Tabletop.init( {key: '0Aphqt-W5Px29dDdxZkxJaDd0dGRGaE02YmNvTDJPYVE', callback: display, simpleSheet: true})
+  Tabletop.init( {key: '0Aphqt-W5Px29dDdxZkxJaDd0dGRGaE02YmNvTDJPYVE', callback: init_manual, simpleSheet: true})
 
 $ ->
   init()
