@@ -2,16 +2,22 @@
 navigation:
 - text: Home
   url: /
+  name: /
 - text: RSVP
   url: /rsvp.html
+  name: /rsvp
 - text: Schedule of Events
   url: /schedule.html
+  name: /schedule
 - text: Useful Information
   url: /info.html
+  name: /info
 - text: Our Local Favorites
   url: /favorites.html
+  name: /favorites
 - text: Registry
   url: /registry.html
+  name: /registry
 ---
 
 <!DOCTYPE html>
@@ -30,18 +36,20 @@ navigation:
     <div id="border">
       <div class="container" id="main">
         <div id="logo">
-          <a href="/"><img src="img/emmy_and_chris.png"/></a>
+          <a href="{{ '/' | relative_url }}"><img src="img/emmy_and_chris.png"/></a>
         </div>
       <div id="nav_wrapper">
         <ul id="nav">
-          {% for link in page.navigation %}
-          <li {% if page.url == link.url %}class="current"{% endif %}>
-          <a href="{{link.url | relative_url}}" {% if forloop.last %}class="last"{% endif %} title="{{link.title}}">{{link.text}}</a></li>
+          {% for link in layout.navigation %}
+          <li {% if page.url == link.name %}class="current"{% endif %}>
+            <a href="{{link.url | relative_url}}" {% if forloop.last %}class="last"{% endif %} title="{{link.title}}">{{ link.text }}</a>
+          </li>
           {% endfor %}
         </ul>
-        </div>
+      </div>
       <div class="clearfix"></div>
       <div id="body">
+          {{ page.url  }}
         {{ content }}
         <!-- <h1 style="text-align:center;">Thanks so much for making this wedding the amazing event it was.</h1> -->
         <!-- <h1 style="color:#888;text-align:center;">We cannot say how much we appreciated all of you.</h2> -->
