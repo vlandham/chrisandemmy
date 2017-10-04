@@ -36,7 +36,7 @@ navigation:
         <ul id="nav">
           {% for link in page.navigation %}
           <li {% if page.url == link.url %}class="current"{% endif %}>
-          <a href="{{link.url}}" {% if forloop.last %}class="last"{% endif %} title="{{link.title}}">{{link.text}}</a></li>
+          <a href="{{link.url | relative_url}}" {% if forloop.last %}class="last"{% endif %} title="{{link.title}}">{{link.text}}</a></li>
           {% endfor %}
         </ul>
         </div>

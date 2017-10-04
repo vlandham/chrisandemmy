@@ -4,7 +4,7 @@ title: Home
 ---
 
 <div class="row">
-  <p><a href="emmy.html">Midwest girl</a> meets <a href="chris.html">English boy</a> at filthy nightclub in Brighton.</p>
+  <p><a href="{{ 'emmy.html' | relative_url }}">Midwest girl</a> meets <a href="{{ 'chris.html' | relative_url }}">English boy</a> at filthy nightclub in Brighton.</p>
   <br/>
   <p>True love ensues.</p>
   <br/>
@@ -14,15 +14,12 @@ title: Home
 
 <div id="button_row" class="row">
   <div class="span3">
-    <a href="/rsvp.html" class="ebtn pink">RSVP Online<br/><span id="rsvp_easy">(how easy is that)</span></a>
+    <a href="{{ '/rsvp.html' | relative_url }}" class="ebtn pink">RSVP Online<br/><span id="rsvp_easy">(how easy is that)</span></a>
   </div>
   <div class="span3">
-    <a href="/schedule.html" class="ebtn yellow">Check out the schedule of events</a>
+    <a href="{{ '/schedule.html' | relative_url }}" class="ebtn yellow">Check out the schedule of events</a>
   </div>
   <div class="span3">
-    <a href="/info.html" class="ebtn blue">See all the little details</a>
+    <a href="{{ '/info.html' | relative_url }}" class="ebtn blue">See all the little details</a>
   </div>
 </div>
-
-
-
